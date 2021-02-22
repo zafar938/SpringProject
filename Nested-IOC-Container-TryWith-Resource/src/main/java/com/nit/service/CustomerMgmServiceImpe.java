@@ -21,7 +21,7 @@ public class CustomerMgmServiceImpe implements ICustomerMgmService {
 		List<CustomerBO> listBO=dao.getCustomerByDetail(cost);
 		//convert listBO to listDTO
 		List<CustomerDTO> listDTO=new ArrayList();
-		listDTO.forEach(bo->{
+		listBO.forEach(bo->{
 			//copy each bo to dto
 		  CustomerDTO dto=new CustomerDTO();
 			BeanUtils.copyProperties(bo, dto);

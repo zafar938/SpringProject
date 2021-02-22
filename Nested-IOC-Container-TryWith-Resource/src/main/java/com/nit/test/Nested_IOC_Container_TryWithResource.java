@@ -19,8 +19,13 @@ public class Nested_IOC_Container_TryWithResource {
 		
 		//invoke controller class method
 		try {
-			controller.getCustomerDetailByBillAmt(30000.0f).forEach(dto->{
+			controller.getCustomerDetailByBillAmt(100000.0f).forEach(dto->{
+				if(dto!=null){
 				System.out.println(dto);
+				}
+				else { 
+				System.out.println("Record Not Found");
+				}
 			});
 		}
 		catch(Exception e) {
