@@ -18,6 +18,7 @@ public class MainController {
     	 
     	 //call service method
     	 List<CustomerDTO> listDTO=service.fetchCustomerDetail(cost);
+    	 //System.out.println(listDTO);
 		return listDTO;
     	 
      }

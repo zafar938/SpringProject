@@ -16,7 +16,7 @@ import com.nit.bo.CustomerBO;
 
 @Repository("custDAO")
 public class CustomerDAOImpe implements ICustomerDAO {
-	private static final String GET_CUST_DETAILS="SELECT CNO,CNAME,CADD,BILLAMT FROM CUSTOMER WHERE BILLAMT<?"; 
+	private static final String GET_CUST_DETAILS="SELECT CNO,CNAME,CADD,BILLAMT FROM CUSTOMER WHERE BILLAMT<(?)"; 
 	@Autowired
     private DataSource ds;
 	
@@ -30,13 +30,17 @@ public class CustomerDAOImpe implements ICustomerDAO {
 			try(ResultSet rs=ps.executeQuery()){
 				listBO=new ArrayList();
 				 while(rs.next()) {
-					 CustomerBO bo=new CustomerBO();
-					 bo.setCno(rs.getInt(1));
-					 bo.setCname(rs.getString(2));
-					 bo.setCaddress(rs.getString(3));
-					 bo.setBillAmt(rs.getFloat(4));
-					 listBO.add(bo);
+						
+						  CustomerBO bo=new CustomerBO();
+						  bo.setCno(rs.getInt(1));
+						  bo.setCname(rs.getString(2));
+						  bo.setCaddress(rs.getString(3));
+						  bo.setBillAmt(rs.getFloat(4));
+						  listBO.add(bo);
+						 
+						  
 				 }
+				 
 				
 			}//try3
 				
@@ -51,7 +55,7 @@ public class CustomerDAOImpe implements ICustomerDAO {
 				e.printStackTrace();
 				throw e;
 			}
-		
+			
 		return listBO;
 	}
 
