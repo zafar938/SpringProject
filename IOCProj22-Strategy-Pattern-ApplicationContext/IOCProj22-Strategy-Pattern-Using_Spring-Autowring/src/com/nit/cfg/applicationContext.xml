@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+    <!-- Dependent class cfg -->
+    <bean id="engg" class="com.nit.comps.DieselEngine" scope="protptype"/>
+    <bean id="pEngine" class="com.nit.comps.PetrolEngine"/>
+    <bean id="cngEngine" class="com.nit.comps.CNGEngine" scope="prototype"/>
+    
+    <!-- Target  class cfg -->
+    <bean id="vehicle" class="com.nit.comps.Vehicle" >
+    <property name="engg" ref="pEngine"/>
+     <!-- <constructor-arg name="engg" ref="cngEngine"/> --> 
+    </bean>
+    
+</beans>

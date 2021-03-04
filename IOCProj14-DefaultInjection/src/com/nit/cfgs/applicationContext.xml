@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+  <bean class="com.nit.bean.SampleBeam">
+    <property name="name" value="zafar"/>
+    <property name="age" value="24"/>
+  </bean>
+  <bean class="com.nit.bean.SampleBeam">
+    <property name="name" value="Ayan"/>
+    <property name="age" value="9"/>
+  </bean>
+  <bean class="com.nit.bean.SampleBeam">
+    <property name="name" value="Rushan"/>
+    <property name="age" value="10"/>
+  </bean>
+  <bean class="java.util.Date"/>
+  <bean class="java.util.Date">
+    <property name="date" value="10"/>
+  </bean>
+
+</beans>

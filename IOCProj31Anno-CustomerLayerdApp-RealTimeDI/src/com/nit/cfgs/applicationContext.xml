@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+   
+   
+     <!-- DriverManager DataSource Cfg -->
+ <!--  <bean id="drdsOra" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName"  value="oracle.jdbc.driver.OracleDriver"/> 
+       <property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl"/>
+       <property name="username" value="scott"/>
+       <property name="password" value="tiger"/>
+  </bean> -->
+  
+      <bean id="drdsMySql" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName"  value="com.mysql.cj.jdbc.Driver"/> 
+       <property name="url" value="jdbc:mysql:///zafarspring"/>
+       <property name="username" value="root"/>
+       <property name="password" value="zafar"/>
+  </bean>
+  
+  <!-- <context:component-scan base-package="com.nit.service,com.nit.dao,com.nit.controller"/> -->
+  <context:component-scan base-package="com.nit"/>
+  </beans>

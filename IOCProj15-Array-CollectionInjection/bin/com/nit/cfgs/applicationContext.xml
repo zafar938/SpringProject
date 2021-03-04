@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+    <!-- Spring bean cfg -->
+     <bean id="dobDt" class="java.util.Date">
+         <constructor-arg name="year" value="98"/>
+         <constructor-arg name="month" value="02"/>
+         <constructor-arg name="date" value="01"/>
+     </bean>
+      <bean id="sysDate" class="java.util.Date"/>
+     <bean id="coDate" class="java.util.Date">
+         <constructor-arg name="year" value="100"/>
+         <constructor-arg name="month" value="8"/>
+         <constructor-arg name="date" value="15"/>
+     </bean>
+     <bean id="clg" class="com.nit.beans.College">
+         <property name="favStudent">
+          <array>
+              <value>Zafar</value>
+              <value>Rushan</value>
+              <value>Ayan</value>
+              <value>Arkam</value>
+          </array>
+         </property>
+         <property name="impDates">
+          <list>
+            <ref bean="dobDt"/>
+            <ref bean="coDate"/>
+            <ref bean="sysDate"/>
+          </list>
+         </property>
+     </bean>
+  <!-- Student bean cfgs -->
+   <bean id="stud" class="com.nit.beans.Student">
+     <property name="marks">
+       <list>
+         <value>89</value>
+         <value>90</value>
+         <value>99</value>
+         <value>100</value>
+       </list>
+     </property>
+     <property name="impDate">
+       <list>
+          <ref bean="dobDt"/>
+          <ref bean="sysDate"/>
+          <ref bean="coDate"/>
+       </list>
+     </property>
+   </bean>
+   <!-- FacultyInfo bean cfgs -->
+   <bean id="info" class="com.nit.beans.FacultyInfo">
+      <property name="phoneNumber">
+        <set value-type="java.lang.String">
+          <value>6200916089</value>
+          <value>9546991103</value>
+          <value>7759631267</value>
+        </set>
+      </property>
+      <property name="impDates">
+       <set value-type="java.util.Date">
+         <ref bean="sysDate"/>
+         <ref bean="dobDt"/>
+         <ref bean="coDate"/>
+       </set>
+      </property>
+   </bean>
+  <!-- FruitStore bean cfg -->
+  <bean id="store" class="com.nit.beans.FruitStore">
+    <constructor-arg name="fruitsInfo">
+       <map key-type="java.lang.String" value-type="java.lang.Float">
+          <entry>
+             <key><value>banana</value></key>
+             <value>100.5f</value>
+          </entry>
+          <entry key="grapes" value="300"/>
+          <entry>
+             <key><value>mango</value></key>
+             <value>500</value>
+          </entry>        
+       </map>
+    </constructor-arg>
+    <constructor-arg name="impDates">
+        <map  key-type="java.lang.String"  value-type="java.util.Date">
+        <entry>
+        <key><value>birthDate</value></key>
+        <ref bean="dobDt"/>
+        </entry>
+        <entry key="openingDate" value-ref="coDate"/>
+        <entry key="today" value-ref="sysDate"/>
+        </map>
+    </constructor-arg>
+  </bean>
+  <bean id="course" class="com.nit.beans.CourseInfo">
+     <constructor-arg name="courseDetails">
+         <props>
+            <prop key="hk">CoreJava</prop>
+            <prop key="Natraz">AdvanceJava</prop>
+            <prop key="Murli">Oracle</prop>
+            <prop key="SivaKumar">HtmlCssJavaScript</prop>
+         </props>
+     </constructor-arg>
+  </bean>
+</beans>
