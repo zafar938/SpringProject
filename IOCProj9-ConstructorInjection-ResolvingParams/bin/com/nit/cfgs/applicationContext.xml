@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+  
+  <bean id="st"   class="com.nit.bean.Student">
+    <constructor-arg value="101"/>
+    <constructor-arg value="zafar"/>
+    <constructor-arg value="Asha"/>
+    <constructor-arg value="73.6"/>
+  </bean>
+  
+ <bean id="st1" class="com.nit.bean.Student">
+     <constructor-arg value="101" />
+     <constructor-arg value="Ayan" />
+     <constructor-arg value="Patna" />
+     
+  </bean>
+ <bean id="st2" class="com.nit.bean.Student">
+     <constructor-arg value="101" />
+     <constructor-arg value="Ayan" />   
+  </bean>
+  <bean id="mm" class="com.nit.bean.Marks">
+     <constructor-arg index="3" value="90"/>
+     <constructor-arg index="0" value="99"/>
+     <constructor-arg index="2" value="98"/>
+     <constructor-arg index="1" value="97"/>
+  </bean>
+  <bean id="pr" class="com.nit.bean.Person">
+     <constructor-arg type="int" value="1090"/>
+     <constructor-arg type="String" value="zafar"/>
+     <constructor-arg type="long" value="854699110919"/>
+     <constructor-arg type="float" value="45876.89"/>
+  </bean>
+<!--   <bean id="cus" class="com.nit.bean.Customer">
+     <constructor-arg name="cid" value="1001"/>
+     <constructor-arg name="cname" value="zafar"/>
+     <constructor-arg name="cadd" value="Asha"/>
+     <constructor-arg name="billAmt" index="3" type="float" value="4586.89"/>
+  </bean>
+ -->  
+  <bean id="cus" class="com.nit.bean.Customer">
+     <property name="cid" value="101"/>
+     <property name="cname" value="zafar"/>
+     <property name="billAmt" value="10051"/>
+  </bean>
+  
+   
+</beans>
