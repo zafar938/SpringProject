@@ -29,7 +29,9 @@ public class CustomerDAOImpe implements ICustomerDAO {
 				ps.setFloat(1, cost);
 			try(ResultSet rs=ps.executeQuery()){
 				listBO=new ArrayList();
+				
 				 while(rs.next()) {
+<<<<<<< HEAD
 						
 						  CustomerBO bo=new CustomerBO();
 						  bo.setCno(rs.getInt(1));
@@ -42,6 +44,16 @@ public class CustomerDAOImpe implements ICustomerDAO {
 				 }
 				 
 				
+=======
+					 CustomerBO bo=new CustomerBO();
+					 bo.setCno(rs.getInt(1));
+					 bo.setCname(rs.getString(2));
+					 bo.setCaddress(rs.getString(3));
+					 bo.setBillAmt(rs.getFloat(4));
+					 listBO.add(bo);
+					 }
+								
+>>>>>>> branch 'master' of https://github.com/zafar938/SpringProject
 			}//try3
 				
 			}//try2
