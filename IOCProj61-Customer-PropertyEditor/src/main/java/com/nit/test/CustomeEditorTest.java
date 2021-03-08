@@ -15,7 +15,15 @@ public class CustomeEditorTest {
 		
 		
 		  DefaultListableBeanFactory factory=new DefaultListableBeanFactory();
-		  factory.addPropertyEditorRegistrar(new MyPERegistrar());
+		  factory.addPropertyEditorRegistrar(new PropertyEditorRegistrar() {
+
+			@Override
+			public void registerCustomEditors(PropertyEditorRegistry registry) {
+				 registry.registerCustomEditor(IntrestAmountDetails.class, new IntrestAmountDetailsEditor());
+						
+			}
+		  });
+		  
 		  XmlBeanDefinitionReader reader=new XmlBeanDefinitionReader(factory);
 		  reader.loadBeanDefinitions("com/nit/cfgs/applicationContext.xml");
 		 
@@ -27,13 +35,12 @@ public class CustomeEditorTest {
 
 	}
 	
-	//static inner class/Nasted class
-	private static class MyPERegistrar implements PropertyEditorRegistrar{
-
-		@Override
-		public void registerCustomEditors(PropertyEditorRegistry registry) {
-			registry.registerCustomEditor(IntrestAmountDetails.class, new IntrestAmountDetailsEditor());
-		}//registerCustomEditor
-	}//inner class
-
+	/*
+	 * //static inner class/Nasted class private static class MyPERegistrar
+	 * implements PropertyEditorRegistrar{
+	 * 
+	 * @Override public void registerCustomEditors(PropertyEditorRegistry registry)
+	 * { registry.registerCustomEditor(IntrestAmountDetails.class, new
+	 * IntrestAmountDetailsEditor()); }//registerCustomEditor }//inner class
+	 */
 }
