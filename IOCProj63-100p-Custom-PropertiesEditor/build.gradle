@@ -1,0 +1,22 @@
+
+
+plugins {
+    // Apply the java-library plugin to add support for Java Library
+    id 'application'
+}
+
+repositories {
+    // Use jcenter for resolving dependencies.
+    // You can declare any Maven/Ivy/file repository here.
+    mavenCentral()
+}
+
+dependencies {
+
+  // https://mvnrepository.com/artifact/org.springframework/spring-context-support
+  implementation group: 'org.springframework', name: 'spring-context-support', version: '5.3.4'
+
+   // https://mvnrepository.com/artifact/org.projectlombok/lombok
+   compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.18'
+   
+}
