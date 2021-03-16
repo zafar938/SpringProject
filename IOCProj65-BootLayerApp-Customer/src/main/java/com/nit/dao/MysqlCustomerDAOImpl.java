@@ -26,6 +26,7 @@ public class MysqlCustomerDAOImpl implements ICustomerDAO {
 
 	@Override
 	public int insert(CustomerBo bo) throws Exception {
+		System.out.println("Ds data source :: "+ds.getClass());
 	   //create Connection
 		Connection con=ds.getConnection();
 		//create prepared Statement

@@ -25,6 +25,7 @@ private static final String INSERT_INTO_CUSTLAYER="INSERT INTO LAYERED_CUSTOMER 
 
 	@Override
 	public int insert(CustomerBo bo) throws Exception {
+		System.out.println("Ds dataSource :: "+ds.getClass());
 		//create connection object
 	   Connection  con=ds.getConnection();
 	   
