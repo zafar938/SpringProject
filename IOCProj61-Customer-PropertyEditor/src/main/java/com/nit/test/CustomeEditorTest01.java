@@ -9,12 +9,20 @@ import com.nit.beans.BankLoanInterestCalculator;
 import com.nit.beans.IntrestAmountDetails;
 import com.nit.editor.IntrestAmountDetailsEditor;
 
-public class CustomeEditorTest {
+public class CustomeEditorTest01 {
 
 	public static void main(String[] args) {
 		
 		
-		  DefaultListableBeanFactory factory=new DefaultListableBeanFactory(); 
+		  DefaultListableBeanFactory factory=new DefaultListableBeanFactory();
+		  factory.addPropertyEditorRegistrar(new PropertyEditorRegistrar() {
+
+				@Override
+				public void registerCustomEditors(PropertyEditorRegistry registry) {
+					 registry.registerCustomEditor(IntrestAmountDetails.class, new IntrestAmountDetailsEditor());
+							
+				}
+			  });
 		  XmlBeanDefinitionReader reader=new XmlBeanDefinitionReader(factory);
 		  reader.loadBeanDefinitions("com/nit/cfgs/applicationContext.xml");
 		 
@@ -26,13 +34,6 @@ public class CustomeEditorTest {
 
 	}
 	
-	
-	  //static inner class/Nasted class 
-	private static class MyPERegistrar implements PropertyEditorRegistrar{
-	  
-	  @Override 
-	  public void registerCustomEditors(PropertyEditorRegistry registry){ 
-		  registry.registerCustomEditor(IntrestAmountDetails.class, new IntrestAmountDetailsEditor()); }//registerCustomEditor 
-	  }//inner class
+
 	 
 }
