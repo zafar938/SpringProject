@@ -1,0 +1,31 @@
+
+
+
+   Info:
+    per:
+     id: 1010
+     name: zafar
+     marks:
+     - 90
+     - 78
+     - 88
+     nickNames:
+     - king
+     - maharaza
+     - prince
+     phoneNumber:
+     - 6200916089
+     - 9546991107
+     - 7759956312
+     idCards:
+      aadharcard: 823481387445
+      voterCard: 38637463871
+      panCard: 3763582819
+     favFruits:
+      grape: black
+      orange: orange
+      mango: yellow
+     company:
+      name: TCS
+      location: Kolkata
+      size: 2000
