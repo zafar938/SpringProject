@@ -1,0 +1,28 @@
+info:
+  per:
+    addrs:
+      doorNo: 1-2-3/11
+      locality: terhagachh
+      street: RK street
+    favFruits:
+      apple: red
+      banana: yellow
+      grape: green
+    id: 1001
+    idCard:
+      aadharCard: 823481387445
+      panCard: CJFPA1104H
+      voterCard: IRO2694107
+    marks:
+    - 90
+    - 89
+    - 95
+    name: zafar
+    nickNames:
+    - zaffu
+    - king
+    - prince
+    phoneNumber:
+    - 62009160089
+    - 9546991107
+    - 7076420920
