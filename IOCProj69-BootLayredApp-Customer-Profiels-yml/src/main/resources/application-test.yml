@@ -1,0 +1,11 @@
+
+
+
+
+spring:
+ datasource:
+  type: org.apache.tomcat.jdbc.pool.DataSource
+  driver-class-name: com.mysql.cj.jdbc.Driver
+  url: jdbc:mysql:///zafarspring
+  password: zafar
+  username: root
