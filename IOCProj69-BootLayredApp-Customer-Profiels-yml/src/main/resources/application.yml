@@ -4,4 +4,42 @@
 
 spring:
  profiles:
-  active: prod
+  active: uat
+  
+---
+spring:
+  profiles: dev
+  datasource:
+   type: org.apache.commons.dbcp2.BasicDataSource
+   driver-class-name: com.mysql.cj.jdbc.Driver
+   url: jdbc:mysql:///zafarspring
+   password: zafar
+   username: root
+---
+spring:
+ profiles: prod
+ datasource:
+  type: org.apache.commons.dbcp2.BasicDataSource
+  driver-class-name: oracle.jdbc.driver.OracleDriver
+  url: jdbc:oracle:thin:@localhost:1521:orcl
+  password: tiger
+  username: scott
+---
+spring:
+ profiles: test
+ datasource:
+  type: org.apache.tomcat.jdbc.pool.DataSource
+  driver-class-name: com.mysql.cj.jdbc.Driver
+  url: jdbc:mysql:///zafarspring
+  password: zafar
+  username: root
+---
+spring:
+ profiles: uat
+ datasource:
+  type: com.mchange.v2.c3p0.ComboPooledDataSource
+  driver-class-name: oracle.jdbc.driver.OracleDriver
+  url: jdbc:oracle:thin:@localhost:1521:orcl
+  password: tiger
+  username: scott
+  
