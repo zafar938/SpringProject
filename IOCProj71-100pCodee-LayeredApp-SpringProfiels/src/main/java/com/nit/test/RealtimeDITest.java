@@ -1,10 +1,15 @@
 package com.nit.test;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.env.ConfigurableEnvironment;
 
+import com.nit.config.AppConfig;
 import com.nit.controller.BankController;
 import com.nit.vo.CustomerVO;
 
@@ -12,8 +17,15 @@ public class RealtimeDITest {
 	
 	public static void main(String[] args) {
 		
-		ApplicationContext ctx=new ClassPathXmlApplicationContext("com/nit/cfgs/applixation.xml");
-		
+		//IOC container
+				AnnotationConfigApplicationContext ctx=new AnnotationConfigApplicationContext();
+				//get Enviroment obj
+				ConfigurableEnvironment  env=(ConfigurableEnvironment)ctx.getEnvironment();
+				//specify active profile
+				env.setActiveProfiles("test");
+				//specify Configuration class
+				ctx.register(AppConfig.class);
+				ctx.refresh();
 		//create object of controller class
 		BankController controller=ctx.getBean("contrroller",BankController.class);
 		
@@ -45,8 +57,9 @@ public class RealtimeDITest {
 			System.out.println("Problem in Customer Registration");
 			e.printStackTrace();
 		}//catch
-		
-		
+		System.out.println("active profile name ::"+Arrays.toString(env.getActiveProfiles()));
+		//close container
+		((AbstractApplicationContext) ctx).close();
 	}//main
 
 }//class
