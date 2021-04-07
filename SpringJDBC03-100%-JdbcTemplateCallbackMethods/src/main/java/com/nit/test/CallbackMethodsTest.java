@@ -3,10 +3,12 @@ package com.nit.test;
 import java.util.List;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.dao.DataAccessException;
 
+import com.nit.config.AppConfig;
 import com.nit.dto.EmployeeDTO;
 import com.nit.service.IEmployeeMgmtService;
 
@@ -14,7 +16,7 @@ public class CallbackMethodsTest {
 
 	public static void main(String[] args) {
 		//create ioc container
-		ApplicationContext cxt=new ClassPathXmlApplicationContext("com/nit/cfgs/applicationContext.xml");
+		ApplicationContext cxt=new AnnotationConfigApplicationContext(AppConfig.class);
 		
 		//get Service class obj
 		IEmployeeMgmtService service=cxt.getBean("empService",IEmployeeMgmtService.class);

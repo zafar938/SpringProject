@@ -16,7 +16,7 @@ import org.springframework.stereotype.Repository;
 
 import com.nit.bo.EmployeeBO;
 
-@Repository("empDAO")
+//@Repository("empDAO")
 public class EmployeeDAOImpl implements IEmployeeDAO {
  public static final String GET_EMP_BY_ENO="SELECT EMPNO,ENAME,JOB,SAL FROM EMP WHERE EMPNO=?";
  public static final String GET_EMP_BY_DESG="SELECT EMPNO,ENAME,JOB,SAL FROM EMP WHERE JOB IN(?,?,?)";

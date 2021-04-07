@@ -16,6 +16,7 @@ public class EmployeeMgmtServiceImpl implements IEmployeeMgmtService {
     
 	@Autowired
 	private IEmployeeDAO dao;
+	
 	@Override
 	public EmployeeDTO fetchEmployeeByNo(int eno) {
 		//use dao
