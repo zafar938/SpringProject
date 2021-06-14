@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+   
+   <!-- Handler Mapping -->
+   <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+      <property name="mappings"> 
+         <props>
+           <prop key="welcome.do">shc</prop>
+           <prop key="list_countries.do">lacc</prop>
+           <prop key="about.do">acu</prop>
+           <prop key="contact.do">cuc</prop>
+         </props>
+      </property>
+   </bean>
+   <!-- Controller class -->
+  <bean id="shc" class="com.nit.controller.ShowHomeController"/>
+  <bean id="lacc"  class="com.nit.controller.ListAllContriesController">
+     <constructor-arg name="service" ref="localeService"/>    
+ </bean>
+  <bean id="acu" class="com.nit.controller.AboutUsController"/>
+  <bean id="cuc"  class="com.nit.controller.ContactUsController"/>
+ <!-- Service class cfg -->
+ <bean id="localeService" class="com.nit.service.LocaleMgmtServiceImpl"/>
+ 
+ <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+   <property name="prefix" value="/WEB-INF/pages/"/>
+   <property name="suffix" value=".jsp"/>
+ </bean>  
+</beans>
