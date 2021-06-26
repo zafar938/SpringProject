@@ -1,5 +1,3 @@
-
-
 <h1 style="color:red;text-align:center"> Contact Us page </h1>
 <br><br>
 

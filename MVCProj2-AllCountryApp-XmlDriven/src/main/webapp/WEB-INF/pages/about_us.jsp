@@ -1,6 +1,4 @@
 
-
-
 <h1 style="color:red;text-align:center"> About Us page </h1>
 <br><br>
 <pre style="text-align: center">
