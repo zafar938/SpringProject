@@ -4,5 +4,5 @@
  
  <h2 style="color:green;text-align:center">${resultMsg}</h2>
  <br><br>
- <a href="register">HOME</a>
+ <a href="register"><image src="resources/images/home.png" width="50" height="50"></a>
  
