@@ -6,11 +6,12 @@
 
 <script type="text/javascript" src="resources/js/validation.js">
 </script>
+
 <body>
 <h1 >Registration Form For Covid-19 Vacctination</h1>
 <h3>Please check all the detail once peroperly before submiting</h3>
 
-<form:form method="POST" modelAttribute="citizen" onsubmit="return validate(this)">
+<form:form name="frm" method="POST" modelAttribute="citizen" onsubmit="return validate(this)">
 
     <%-- <p style="color:red;text-align:center">
           <form:errors  path="*"/>
@@ -33,14 +34,53 @@
       <td>Age ::</td>
       <td><form:input path="age"/><form:errors path="age" cssStyle="color:red"/><span id="ageErr"></span></td>
     </tr>
+     <tr>
+      <td>select country ::</td>
+      <td><form:select path="country" onchange="sendRequest()">
+        <form:option value="">---Selecct a value---</form:option>
+        <form:options items="${countriesInfo}"/>
+       
+      </form:select> <form:errors path="country" cssStyle="color:red"/> <span id="countryErr"></span></td>
+    </tr>
+      <script language="javaScript">
+        function sendRequest(){
+        	frm.action="state"
+        	frm.submit();
+        }
+      </script>
+     <tr>
+      <td>select State ::</td>
+      <td><form:select path="state">
+        <form:option value="">---Selecct a value---</form:option>
+        <form:options items="${stateInfo}"/>
+       
+      </form:select> <form:errors path="state" cssStyle="color:red"/> <span id="state"></span></td>
+    </tr>
+   
+    </tr>
     <tr>
-      <td>Vaccine name ::</td>
+       <td>Select Language ::</td>
+       <td><form:select path="language" multiple="multiple">
+           <form:option value="">--Select a value--</form:option>
+           <form:options items="${languageInfo}"/>
+       </form:select>
+           <form:errors path="language"/><span id="languageErr"></span></td>
+    </tr>
+     <tr>
+       <td>Select Hobbies ::</td>
+       <td><form:checkboxes items="${hobbiesInfo }" path="hobbies"/>
+           <form:errors path="hobbies"/><span id="hobbiesErr"></span></td>
+    </tr>
+    
+     <tr>
+     <td>Vaccine name  ::</td>
       <td><form:select path="vaccineName">
         <form:option value="">---Selecct a value---</form:option>
         <form:options items="${vaccineList}"/>
        
       </form:select> <form:errors path="vaccineName" cssStyle="color:red"/> <span id="vaccineNameErr"></span></td>
     </tr>
+   
     <tr>
       <td>Income of the Year ::</td>
       <td><form:input path="income"/><form:errors path="income" cssStyle="color:red"/><span id="incomeErr"></span></td>
