@@ -60,3 +60,6 @@
   <br>
    <fmt:formatNumber var="fprice" value="72564235" type="currency" />
   <b>price is  :: ${fprice}</b>
+  
+  
+  
