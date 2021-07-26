@@ -37,9 +37,20 @@ public class LoginController {
       //keep result in model attribute
       map.put("resultMsg",result);
       
+      if(result.equalsIgnoreCase("VALID CREDENTIALS")) {
+    	  return "regestrationForm";
+    	  
+      }
+      
       //retunr LNV
-      System.out.println(result);
+      else
          return "login_form";
+		
+	}
+	@GetMapping(value="register")
+	public  String  regestrationForm(@ModelAttribute("userForm") UserDetails details) {
+		//return LVN
+		return "regestrationForm";
 		
 	}
 }
