@@ -1,0 +1,34 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+
+<body style="background-color:lightblue;">
+<h1 style="color:red;text-align:center">Employee Edit Form page</h1>
+
+<table class="table table-bordered">
+   <form th:action="@{/employee/employee_edit}" th:object="${emp}" method="POST">
+   <tr>
+      <td>Employee No ::</td>
+      <td><input th:field="*{empno}"/></td>
+   </tr>
+   <tr>
+      <td>Employee Name ::</td>
+      <td><input th:field="*{ename}"/></td>
+   </tr>
+   <tr>
+      <td>Employee job ::</td>
+      <td><input th:field="*{job}"/></td>
+   </tr>
+   <tr>
+      <td>Employee Sal ::</td>
+      <td><input th:field="*{sal}"/></td>
+   </tr>
+   <tr>
+     <td colspan="2"><input type="image" th:src="@{/images/submit.png}" width="120px" height="40" align="center" alt="Submit"></td>
+   </tr>
+   
+   </form>
+</table>
+</body>
+</html>
