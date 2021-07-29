@@ -1,0 +1,21 @@
+
+
+body{
+	background-color:lightblue;
+}
+h1 {
+	background-color:yellow;
+	color:green;
+	text-align:center;
+	
+}
+h3 {    
+	   background-color:cyan;
+	    color:red;
+    	text-align:center;
+	
+}
+span {
+  color: red;
+  margin-left: 20px;
+}
