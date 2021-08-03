@@ -13,3 +13,5 @@
 </pre>
 <br>
 <a href="welcome">home</a>
+<br>
+<a href="./logout">logout</a>

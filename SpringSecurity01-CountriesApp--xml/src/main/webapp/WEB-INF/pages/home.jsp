@@ -9,4 +9,5 @@
  <h2 style="color:red;text-align:center"><a href="about">AboutUs</a> 
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="contact">ContactUs</a></h2>
   
- 
+ <br>
+ <a href="./logout">logout</a>

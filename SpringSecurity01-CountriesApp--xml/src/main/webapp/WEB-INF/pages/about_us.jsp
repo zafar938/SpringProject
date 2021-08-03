@@ -15,3 +15,5 @@
        Flipkart for US$16 billion, valuing Flipkart at around $20 billion.
 </pre>
    <a href="welcome">home</a>
+   <br>
+   <a href="./logout">logout</a>

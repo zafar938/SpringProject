@@ -13,16 +13,32 @@
   <security:intercept-url pattern="/about" access="hasRole('ROLE_VISITOR')"/>
   <security:intercept-url pattern="/contact" access="hasRole('ROLE_VISITOR')"/>
   
-   <security:http-basic/>
+   <!-- <security:http-basic/> -->
+   <security:form-login/>
+   <security:remember-me/>
+   <security:access-denied-handler error-page="/access_denied.jsp" />
+   <security:logout/>
+   <security:session-management >
+     <security:concurrency-control error-if-maximum-exceeded="true" max-sessions="2"/>
+   </security:session-management>
 </security:http>
 <security:authentication-manager>
    <security:authentication-provider>
-      <security:user-service>
-        <security:user name="raja" password="{noop}rani" authorities="ROLE_AGENT"/>
+  <!-- <security:password-encoder hash="bcrypt"/> -->
+  <security:user-service properties="classpath:com/nit/commons/info.properties"/>
+<!-- <security:user-service>
+<security:user name="raja" password=" $2a$10$815pEFybaHp56kazZ6Thf.dP8aXhGVJGlSyNKYHaAxZQtPUtMFeEy" authorities="ROLE_AGENT" locked="true"/>
+        <security:user name="zafar" password="$2a$10$KIeKWvMYS5fm4EB3zRHLs.Xg7IPkGVcIEkrlKZfrqOxbt4k4LmaKe" authorities="ROLE_CUSTOMER"/>
+        <security:user name="arkam" password="$2a$10$kZXABeu2GWaSNrt26mWVEeeUSoBgUlwYQI.AC74IIuVZCZl.KH.B6" authorities="ROLE_VISITOR"/>
+        <security:user name="king"  password="$2a$10$5FIl7KfHh6kGZxxGuBobyupA8m2MsSwsr.rQemtaT6MlKxUXKBkmG" authorities="ROLE_CUSTOMER,ROLE_AGENT"/>
+</security:user-service> -->
+   
+     <!--  <security:user-service>
+        <security:user name="raja" password="{noop}rani" authorities="ROLE_AGENT" locked="true"/>
         <security:user name="zafar" password="{noop}zafar" authorities="ROLE_CUSTOMER"/>
         <security:user name="arkam" password="{noop}arkam" authorities="ROLE_VISITOR"/>
         <security:user name="king"  password="{noop}delhi" authorities="ROLE_CUSTOMER,ROLE_AGENT"/>
-      </security:user-service>
+      </security:user-service> -->
    </security:authentication-provider> 
 </security:authentication-manager>
 </beans>

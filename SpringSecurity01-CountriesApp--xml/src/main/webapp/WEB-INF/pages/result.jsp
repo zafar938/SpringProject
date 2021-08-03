@@ -19,3 +19,5 @@
 
 <br>
 <a href="welcome.do">home</a>
+<br>
+<a href="./logout">logout</a>
