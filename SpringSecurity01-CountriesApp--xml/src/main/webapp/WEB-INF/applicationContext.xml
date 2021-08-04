@@ -7,4 +7,5 @@
 
    <import resource="service-beans.xml"/>
    <import resource="security-beans.xml"/>
+   <import resource="persistence-beans.xml"/>
 </beans>

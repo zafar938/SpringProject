@@ -23,9 +23,17 @@
    </security:session-management>
 </security:http>
 <security:authentication-manager>
-   <security:authentication-provider>
-  <!-- <security:password-encoder hash="bcrypt"/> -->
-  <security:user-service properties="classpath:com/nit/commons/info.properties"/>
+
+ <security:authentication-provider>
+   <security:jdbc-user-service data-source-ref="ds"
+                                users-by-username-query="SELECT UNAME,PWD,STATUS FROM USERS WHERE UNAME=?"
+                                authorities-by-username-query="SELECT UNAME,ROLE FROM USER_ROLES WHERE UNAME=?"/>
+ </security:authentication-provider>
+
+
+  <!--  <security:authentication-provider>
+  <security:password-encoder hash="bcrypt"/>
+  <security:user-service properties="classpath:com/nit/commons/info.properties"/> -->
 <!-- <security:user-service>
 <security:user name="raja" password=" $2a$10$815pEFybaHp56kazZ6Thf.dP8aXhGVJGlSyNKYHaAxZQtPUtMFeEy" authorities="ROLE_AGENT" locked="true"/>
         <security:user name="zafar" password="$2a$10$KIeKWvMYS5fm4EB3zRHLs.Xg7IPkGVcIEkrlKZfrqOxbt4k4LmaKe" authorities="ROLE_CUSTOMER"/>
@@ -39,6 +47,6 @@
         <security:user name="arkam" password="{noop}arkam" authorities="ROLE_VISITOR"/>
         <security:user name="king"  password="{noop}delhi" authorities="ROLE_CUSTOMER,ROLE_AGENT"/>
       </security:user-service> -->
-   </security:authentication-provider> 
+   <!-- </security:authentication-provider> --> 
 </security:authentication-manager>
 </beans>
